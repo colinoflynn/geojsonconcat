@@ -21,7 +21,7 @@ for x in db['features']:
     #if not hasattr(x, 'marker-symbol'):
     if True:
         if x['properties']['RUCR_EXT_D'] == 'BREAK AND ENTER':
-            x['properties']['marker-symbol'] = 'castle-11.svg'
+            x['properties']['marker-symbol'] = 'castle'
         elif x['properties']['RUCR_EXT_D'] == 'THEFT OF VEHICLE':
             x['properties']['marker-symbol'] = 'car-11.svg'
         elif x['properties']['RUCR_EXT_D'] == 'THEFT FROM VEHICLE':
