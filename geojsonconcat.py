@@ -22,7 +22,7 @@ for x in newjson['features']:
     #if not hasattr(x, 'marker-symbol'):
     if True:
         if x['properties']['RUCR_EXT_D'] == 'BREAK AND ENTER':
-            x['properties']['marker-symbol'] = 'castle'
+            x['properties']['marker-symbol'] = 'warehouse'
         elif x['properties']['RUCR_EXT_D'] == 'THEFT OF VEHICLE':
             x['properties']['marker-symbol'] = 'car'
         elif x['properties']['RUCR_EXT_D'] == 'THEFT FROM VEHICLE':
