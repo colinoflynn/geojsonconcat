@@ -18,17 +18,18 @@ db['features'].extend(x for x in new_data_list if x not in db['features'])
 
 #Update so github adds different colors/icons
 for x in db['features']:
-    if not hasattr(x, 'marker-symbol'):
+    #if not hasattr(x, 'marker-symbol'):
+    if True:
         if x['properties']['RUCR_EXT_D'] == 'BREAK AND ENTER':
-            x['properties']['marker-symbol'] = 'castle-11'
+            x['properties']['marker-symbol'] = 'castle-11.svg'
         elif x['properties']['RUCR_EXT_D'] == 'THEFT OF VEHICLE':
-            x['properties']['marker-symbol'] = 'car-11'
+            x['properties']['marker-symbol'] = 'car-11.svg'
         elif x['properties']['RUCR_EXT_D'] == 'THEFT FROM VEHICLE':
-            x['properties']['marker-symbol'] = 'grocery-11'
+            x['properties']['marker-symbol'] = 'grocery-11.svg'
         elif x['properties']['RUCR_EXT_D'] == 'ASSAULT':
-            x['properties']['marker-symbol'] = 'baseball-15'
+            x['properties']['marker-symbol'] = 'baseball-15.svg'
         elif x['properties']['RUCR_EXT_D'] == 'ROBBERY':
-            x['properties']['marker-symbol'] = 'bank-11'
+            x['properties']['marker-symbol'] = 'bank-11.svg'
 
 print "Ending DB size: %d"%len(db['features'])
 
