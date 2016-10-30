@@ -16,6 +16,20 @@ r = requests.get(json_url)
 new_data_list = r.json()['features']
 db['features'].extend(x for x in new_data_list if x not in db['features'])
 
+#Update so github adds different colors/icons
+for x in db['features']:
+    if not hasattr(x, 'marker-symbol'):
+        if x['properties']['RUCR_EXT_D'] == 'BREAK AND ENTER':
+            x['properties']['marker-symbol'] = 'castle-11'
+        elif x['properties']['RUCR_EXT_D'] == 'THEFT OF VEHICLE':
+            x['properties']['marker-symbol'] = 'car-11'
+        elif x['properties']['RUCR_EXT_D'] == 'THEFT FROM VEHICLE':
+            x['properties']['marker-symbol'] = 'grocery-11'
+        elif x['properties']['RUCR_EXT_D'] == 'ASSAULT':
+            x['properties']['marker-symbol'] = 'baseball-15'
+        elif x['properties']['RUCR_EXT_D'] == 'ROBBERY':
+            x['properties']['marker-symbol'] = 'bank-11'
+
 print "Ending DB size: %d"%len(db['features'])
 
 #Save database back to disk
