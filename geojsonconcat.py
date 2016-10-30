@@ -23,7 +23,7 @@ for x in db['features']:
         if x['properties']['RUCR_EXT_D'] == 'BREAK AND ENTER':
             x['properties']['marker-symbol'] = 'castle'
         elif x['properties']['RUCR_EXT_D'] == 'THEFT OF VEHICLE':
-            x['properties']['marker-symbol'] = 'car-11.svg'
+            x['properties']['marker-symbol'] = 'car'
         elif x['properties']['RUCR_EXT_D'] == 'THEFT FROM VEHICLE':
             x['properties']['marker-symbol'] = 'grocery-11.svg'
         elif x['properties']['RUCR_EXT_D'] == 'ASSAULT':
