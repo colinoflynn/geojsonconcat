@@ -2,7 +2,8 @@ import requests
 import json
 
 #Open "database" which is a shitty file with everything saved to disk
-with open('db.json') as data_file:    
+#If db.json doesn't exist can just save the json_url data to disk first time
+with open('db.geojson') as data_file:    
     db = json.load(data_file)
 
 print "Starting DB size: %d"%len(db['features'])
@@ -18,6 +19,6 @@ db['features'].extend(x for x in new_data_list if x not in db['features'])
 print "Ending DB size: %d"%len(db['features'])
 
 #Save database back to disk
-with open('db.json', 'w') as outfile:
+with open('db.geojson', 'w') as outfile:
     json.dump(db, outfile)
 
